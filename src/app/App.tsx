@@ -1,3 +1,5 @@
+import { Stack } from "@/app/stackflow";
+
 export default function App() {
-  return <div className="bg-red-500">initial</div>;
+  return <Stack />;
 }
