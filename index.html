@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="돼지 농가를 위한 종합 솔루션, Piggo!" />
+    <meta property="og:type" content="website" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta
+      property="og:description"
+      content="돼지 농가를 위한 종합 솔루션, Piggo!"
+    />
+    <title>돼지 농가를 위한 종합 솔루션, Piggo!</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/app/main.tsx"></script>
+  </body>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/firebase/firebase-messaging-sw.js")
+          .then((registration) => {
+            console.log("Service Worker 등록 성공:", registration.scope);
+          })
+          .catch((error) => {
+            console.log("Service Worker 등록 실패:", error);
+          });
+      });
+    }
+  </script>
+</html>
