@@ -7,11 +7,12 @@ import { useFlow } from '@/app/stackflow';
 import { PATH } from '@/shared/constants';
 import { CoughIcon } from '@/asset/icons';
 import { FaHome } from 'react-icons/fa';
+import { useFetchArticle } from '../api';
 
 export default function HomeContainer() {
   const { push } = useFlow();
   const today = new Date();
-  const data = Array.from({ length: 6 });
+  const { data } = useFetchArticle();
 
   return (
     <div className='flex h-full flex-col justify-between'>
@@ -96,9 +97,10 @@ export default function HomeContainer() {
           <button className='cursor-pointer focus:outline-none'>더보기</button>
         </div>
         <div className='scrollbar-hide rounded-10 relative flex h-50 items-center gap-x-3 overflow-x-scroll'>
-          {data.map((_, i) => (
-            <Card key={i} className='h-50 w-40' />
-          ))}
+          {data &&
+            data.map((article, i) => (
+              <Card key={i} className='h-50 w-40' article={article} />
+            ))}
         </div>
       </div>
 

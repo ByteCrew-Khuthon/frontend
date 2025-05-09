@@ -1,12 +1,15 @@
-import React, { type ReactNode } from 'react';
+import React from 'react';
 import { cn } from '@/shared/utils';
+import type { Article } from '@/widgets/home/types';
 
 interface CardProps {
   className?: string;
-  children?: ReactNode;
+  article: Article;
 }
 
-export default function Card({ className, children }: CardProps) {
+export default function Card({ className, article }: CardProps) {
+  const { title, content } = article;
+
   return (
     <div
       className={cn(
@@ -14,7 +17,8 @@ export default function Card({ className, children }: CardProps) {
         'rounded-large box-shadow-dock flex flex-shrink-0 flex-col gap-4 bg-white p-4',
       )}
     >
-      {children}
+      <span>{title}</span>
+      <p>{content}</p>
     </div>
   );
 }
