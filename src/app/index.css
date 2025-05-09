@@ -22,6 +22,14 @@
   --radius-small: 5px;
 }
 
+@font-face {
+  font-family: 'LOTTERIACHAB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2')
+    format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
 :root {
   font-family:
     'Pretendard Variable',
@@ -97,6 +105,7 @@
 
   .logo {
     @apply text-2xl font-bold;
+    font-family: 'LOTTERIACHAB';
   }
 
   @keyframes shake {
