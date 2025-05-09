@@ -8,11 +8,13 @@ import { PATH } from '@/shared/constants';
 import { CoughIcon } from '@/asset/icons';
 import { FaHome } from 'react-icons/fa';
 import { useFetchArticle } from '../api';
+import { useFetchCoughCnt } from '../api/cough';
 
 export default function HomeContainer() {
   const { push } = useFlow();
   const today = new Date();
   const { data } = useFetchArticle();
+  const { data: coughCnt } = useFetchCoughCnt();
 
   return (
     <div className='flex h-full flex-col justify-between'>
@@ -57,7 +59,7 @@ export default function HomeContainer() {
                 <div className='flex flex-col'>
                   <span className='text-lg font-medium'>지난밤 기침</span>
                   <p>
-                    <span className='text-xl font-bold'>0</span>회
+                    <span className='text-xl font-bold'>{coughCnt || 0}</span>회
                   </p>
                 </div>
               </div>
@@ -99,13 +101,20 @@ export default function HomeContainer() {
         <div className='scrollbar-hide rounded-10 relative flex h-fit items-center gap-x-3 overflow-x-scroll'>
           {data &&
             data.map((article, i) => (
-              <Card key={i} className='h-64 w-64' article={article} />
+              <Card
+                key={i}
+                className='h-64 w-64'
+                article={article}
+                onClick={() => window.open(article.url, '_blank')}
+              />
             ))}
         </div>
       </div>
 
-      <div className='rounded-large box-shadow-dock flex w-full justify-center bg-white p-6 py-4'>
-        <FaHome size={18} />
+      <div className='rounded-large flex w-full justify-center'>
+        <div className='box-shadow-dock grid size-16 place-items-center rounded-full bg-white'>
+          <FaHome size={20} />
+        </div>
       </div>
     </div>
   );

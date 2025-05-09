@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { type ButtonHTMLAttributes } from 'react';
 import { cn } from '@/shared/utils';
 import type { Article } from '@/widgets/home/types';
 
-interface CardProps {
+interface CardProps extends ButtonHTMLAttributes<HTMLDivElement> {
   className?: string;
   article: Article;
 }
 
-export default function Card({ className, article }: CardProps) {
+export default function Card({ className, article, onClick }: CardProps) {
   const { title, content } = article;
   const hasHeader = title.includes('[초록]');
 
   return (
     <div
+      onClick={onClick}
       className={cn(
         className,
         'rounded-large box-shadow-dock flex flex-shrink-0 flex-col gap-2 overflow-hidden bg-white p-4',
