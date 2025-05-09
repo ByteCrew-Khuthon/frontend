@@ -1,6 +1,6 @@
 import { IoNotifications } from 'react-icons/io5';
 
-const baseStyle = { height: '54px', border: false };
+const baseStyle = { height: '64px', border: false };
 
 export const AppBar = () => ({
   ...baseStyle,

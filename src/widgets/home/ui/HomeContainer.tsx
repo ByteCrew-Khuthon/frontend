@@ -72,7 +72,9 @@ export default function HomeContainer() {
                 {getDate(today, 'YYYY.MM.DD 기준')}
               </span>
             </div>
-            <div
+            <button
+              name='diseaseMap'
+              onClick={() => push(PATH.MAP, {})}
               className='h-full w-40 bg-cover bg-center'
               style={{
                 backgroundImage: `url(https://i.pinimg.com/736x/2c/82/ed/2c82edda3e2bce7f7e1ca55557790d97.jpg)`,
@@ -85,7 +87,7 @@ export default function HomeContainer() {
         <span className='text-xl font-bold'>최근 농장 소식</span>
         <button className='cursor-pointer focus:outline-none'>더보기</button>
       </div>
-      <div className='scrollbar-hide h-card-height rounded-10 relative flex items-center gap-x-3 overflow-x-scroll'>
+      <div className='scrollbar-hide rounded-10 relative flex h-50 items-center gap-x-3 overflow-x-scroll'>
         {data.map((_, i) => (
           <Card key={i} className='h-50 w-40' />
         ))}
