@@ -9,7 +9,7 @@ import { DangerIcon } from '@/asset/icons';
 export default function MapContainer() {
   return (
     <>
-      <div className='p-normal-padding flex flex-col gap-6 bg-white pt-4'>
+      <div className='p-normal-padding flex w-screen flex-col gap-6 bg-white pt-4'>
         <span className='text-xl font-bold'>근처 축사 발병 지도</span>
         <div className='border-border h-100 overflow-hidden rounded-lg border-[1px]'>
           <Map />

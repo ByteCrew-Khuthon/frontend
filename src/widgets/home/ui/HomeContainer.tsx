@@ -65,7 +65,7 @@ export default function HomeContainer() {
               </div>
               <button
                 name='recentCough'
-                className='rounded-small bg-point flex h-fit w-fit items-center justify-center px-4 py-2 text-nowrap text-white'
+                className='rounded-small bg-point flex h-fit w-fit cursor-pointer items-center justify-center px-4 py-2 text-nowrap text-white'
                 onClick={() => push(PATH.COUGH, {})}
               >
                 자세히 보기
@@ -86,7 +86,7 @@ export default function HomeContainer() {
               <button
                 name='diseaseMap'
                 onClick={() => push(PATH.MAP, {})}
-                className='h-full w-40 bg-cover bg-center'
+                className='h-full w-40 cursor-pointer bg-cover bg-center'
                 style={{
                   backgroundImage: `url(https://i.pinimg.com/736x/2c/82/ed/2c82edda3e2bce7f7e1ca55557790d97.jpg)`,
                 }}
