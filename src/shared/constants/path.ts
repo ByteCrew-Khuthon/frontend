@@ -1,3 +1,4 @@
 export const PATH = {
-  HOME: "HomeScreen",
+  HOME: 'HomeScreen',
+  FARM: 'FarmScreen',
 } as const;
