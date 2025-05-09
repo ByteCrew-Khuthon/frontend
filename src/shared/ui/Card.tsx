@@ -19,10 +19,10 @@ export default function Card({ className, article }: CardProps) {
       )}
     >
       <div className='w-[86%] text-lg font-semibold'>
-        {hasHeader ? title.split('[초록]')[1] : title}
+        {hasHeader ? title.split('[초록]')[1].slice(0, 30) + '...' : title}
       </div>
-      <div className='line-clamp-5 h-[60%] overflow-hidden text-ellipsis'>
-        {content.slice(0, 100)}
+      <div className='flex-1 overflow-hidden'>
+        {content.slice(0, 90) + '...'}
       </div>
     </div>
   );

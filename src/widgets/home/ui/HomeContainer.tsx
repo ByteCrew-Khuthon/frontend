@@ -99,13 +99,13 @@ export default function HomeContainer() {
         <div className='scrollbar-hide rounded-10 relative flex h-fit items-center gap-x-3 overflow-x-scroll'>
           {data &&
             data.map((article, i) => (
-              <Card key={i} className='h-56 w-64' article={article} />
+              <Card key={i} className='h-64 w-64' article={article} />
             ))}
         </div>
       </div>
 
-      <div className='rounded-large box-shadow-dock flex w-full justify-center bg-white p-6'>
-        <FaHome size={20} />
+      <div className='rounded-large box-shadow-dock flex w-full justify-center bg-white p-6 py-4'>
+        <FaHome size={18} />
       </div>
     </div>
   );
