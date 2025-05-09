@@ -103,7 +103,7 @@ export default function HomeContainer() {
             data.map((article, i) => (
               <Card
                 key={i}
-                className='h-64 w-64'
+                className='h-64 w-64 cursor-pointer'
                 article={article}
                 onClick={() => window.open(article.url, '_blank')}
               />
