@@ -10,28 +10,32 @@ export default function HomeContainer() {
 
   return (
     <>
-      <div className='mt-12 flex items-center gap-2'>
-        <span className='border-point bg-point/30 w-fit rounded-full border-[1px] px-2 py-1 text-sm'>
-          농장
-        </span>
-        {FARM.location}
-      </div>
-      <div className='flex w-full justify-between'>
-        <div className='flex flex-col gap-1 text-2xl font-medium'>
-          <p>
-            <span className='font-bold'>유진</span>님, 좋은 아침이에요.
-          </p>
-          <p>
-            오늘의 <span className='font-bold'>{FARM.title}</span>을 확인하세요!
-          </p>
+      <div className='flex flex-col gap-3'>
+        <div className='mt-12 flex items-center gap-2'>
+          <span className='border-point bg-point/30 w-fit rounded-full border-[1px] px-2 py-1 text-sm'>
+            농장
+          </span>
+          {FARM.location}
         </div>
-        <button
-          name='farmStatus'
-          className='border-border bg-fill h-fit w-fit cursor-pointer rounded-full border-[1px] px-3 py-1.5 focus:outline-none'
-        >
-          더보기
-        </button>
+        <div className='flex w-full justify-between'>
+          <div className='flex flex-col gap-1 text-2xl font-medium'>
+            <p>
+              <span className='font-bold'>유진</span>님, 좋은 아침이에요.
+            </p>
+            <p>
+              오늘의 <span className='font-bold'>{FARM.title}</span>을
+              확인하세요!
+            </p>
+          </div>
+          <button
+            name='farmStatus'
+            className='border-border bg-fill h-fit w-fit cursor-pointer rounded-full border-[1px] px-3 py-1.5 focus:outline-none'
+          >
+            더보기
+          </button>
+        </div>
       </div>
+
       <div className='flex flex-col gap-3'>
         <CardItem className='h-30'>
           <div className='flex size-full items-center justify-between'>
