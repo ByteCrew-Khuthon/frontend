@@ -11,7 +11,12 @@ export default function HomeScreen() {
 
   return (
     <div className='fixed inset-0 overflow-hidden'>
-      <AppScreen appBar={AppBar(() => push(PATH.NOTICE, {}))}>
+      <AppScreen
+        appBar={AppBar(
+          () => push(PATH.NOTICE, {}),
+          () => push(PATH.REPORT, {}),
+        )}
+      >
         <div className='from-sub to-point absolute -z-1 h-[40%] w-full bg-gradient-to-b' />
         <div className='scrollbar-hide container-mobile gap-y-normal-padding p-normal-padding relative flex size-full flex-col overflow-y-scroll pt-4'>
           <HomeContainer />
