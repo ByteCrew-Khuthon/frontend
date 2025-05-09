@@ -16,6 +16,8 @@
   --text-md: 14px;
   --text-sm: 12px;
 
+  --spacing-normal-padding: 24px;
+
   --radius-large: 10px;
   --radius-small: 5px;
 }
@@ -39,6 +41,7 @@
     sans-serif;
   font-size: 14px;
   color: #333;
+  background-color: #f4f4f4;
 }
 
 @layer utilities {
