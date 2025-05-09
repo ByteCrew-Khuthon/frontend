@@ -1,12 +1,16 @@
-import React from 'react';
+import { IoNotifications } from 'react-icons/io5';
 
-import { IoIosNotifications } from 'react-icons/io';
+const baseStyle = { height: '54px', border: false };
 
-export default function AppBar() {
-  return (
-    <div className='absolute top-0 flex w-full items-center justify-between bg-transparent px-6 py-4'>
-      <span className='logo text-xl text-white'>Piggo</span>
-      <IoIosNotifications size={28} className='text-white' />
-    </div>
-  );
-}
+export const AppBar = () => ({
+  ...baseStyle,
+  backgroundColor: '#FFC9C9',
+  renderLeft: () => <span className='logo ml-4 text-white'>Piggo</span>,
+  renderRight: () => <IoNotifications size={21} className='mr-4 text-white' />,
+});
+
+export const TitleAppBar = (title?: string) => ({
+  ...baseStyle,
+  backgroundColor: '#F4f4f4',
+  title: title,
+});
