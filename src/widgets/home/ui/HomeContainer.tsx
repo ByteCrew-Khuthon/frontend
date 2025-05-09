@@ -96,10 +96,10 @@ export default function HomeContainer() {
           <span className='text-xl font-bold'>최근 농장 소식</span>
           <button className='cursor-pointer focus:outline-none'>더보기</button>
         </div>
-        <div className='scrollbar-hide rounded-10 relative flex h-50 items-center gap-x-3 overflow-x-scroll'>
+        <div className='scrollbar-hide rounded-10 relative flex h-fit items-center gap-x-3 overflow-x-scroll'>
           {data &&
             data.map((article, i) => (
-              <Card key={i} className='h-50 w-40' article={article} />
+              <Card key={i} className='h-56 w-64' article={article} />
             ))}
         </div>
       </div>
