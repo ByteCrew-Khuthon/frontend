@@ -5,6 +5,7 @@ import { Card, CardItem } from '@/shared/ui';
 import { getDate } from '@/shared/utils';
 import { useFlow } from '@/app/stackflow';
 import { PATH } from '@/shared/constants';
+import { CoughIcon } from '@/asset/icons';
 
 export default function HomeContainer() {
   const { push } = useFlow();
@@ -44,7 +45,13 @@ export default function HomeContainer() {
         <CardItem className='h-30'>
           <div className='flex size-full items-center justify-between'>
             <div className='flex size-full items-center gap-4'>
-              <div className='rounded-small h-full w-24 bg-red-400' />
+              <div className='flex h-full items-center'>
+                <img
+                  className='rounded-small size-18 object-cover'
+                  src={CoughIcon}
+                />
+              </div>
+
               <div className='flex flex-col'>
                 <span className='text-lg font-medium'>지난밤 기침</span>
                 <p>
