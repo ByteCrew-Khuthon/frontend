@@ -3,15 +3,18 @@ import React from 'react';
 import { FARM } from '@/mock';
 import { Card, CardItem } from '@/shared/ui';
 import { getDate } from '@/shared/utils';
+import { useFlow } from '@/app/stackflow';
+import { PATH } from '@/shared/constants';
 
 export default function HomeContainer() {
+  const { push } = useFlow();
   const today = new Date();
   const data = Array.from({ length: 6 });
 
   return (
     <>
       <div className='flex flex-col gap-3'>
-        <div className='mt-12 flex items-center gap-2'>
+        <div className='flex items-center gap-2'>
           <span className='border-point bg-point/30 w-fit rounded-full border-[1px] px-2 py-1 text-sm'>
             농장
           </span>
@@ -29,7 +32,8 @@ export default function HomeContainer() {
           </div>
           <button
             name='farmStatus'
-            className='border-border bg-fill h-fit w-fit cursor-pointer rounded-full border-[1px] px-3 py-1.5 focus:outline-none'
+            className='border-border bg-fill size-fit cursor-pointer rounded-full border-[1px] px-3 py-1.5 text-sm focus:outline-none'
+            onClick={() => push(PATH.FARM, {})}
           >
             더보기
           </button>
