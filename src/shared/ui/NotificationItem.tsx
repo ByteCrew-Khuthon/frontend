@@ -27,9 +27,7 @@ export default function NotificationItem({
           <div className='flex flex-1 flex-col gap-1'>
             <div className='flex w-full items-center justify-between'>
               <span className='font-semibold'>{title}</span>
-              <span className='text-sm'>
-                {getDate(date, 'YYYY년 MM월 DD일')}
-              </span>
+              <span className='text-sm'>{getDate(date, 'YYYY.MM.DD')}</span>
             </div>
             <p>{description}</p>
           </div>
