@@ -9,7 +9,7 @@ export default function CoughScreen() {
   return (
     <div className='fixed inset-0 overflow-hidden'>
       <AppScreen appBar={TitleAppBar('기침 상태')}>
-        <div className='scrollbar-hide container-mobile gap-y-normal-padding flex size-fit h-screen flex-col overflow-scroll overflow-y-scroll'>
+        <div className='scrollbar-hide container-mobile gap-y-normal-padding flex size-fit flex-col overflow-scroll overflow-y-scroll'>
           <CoughContainer />
         </div>
       </AppScreen>

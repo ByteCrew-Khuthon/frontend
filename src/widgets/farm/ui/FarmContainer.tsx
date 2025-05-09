@@ -1,14 +1,19 @@
 import React from 'react';
 
-import { cn, getDate } from '@/shared/utils';
+import { cn } from '@/shared/utils';
 
 import { PIG_TABLE } from '@/widgets/farm/constants';
-import type { Notification, Pig } from '@/widgets/farm/types';
+import type { Pig } from '@/widgets/farm/types';
 
-import { notifications, pigs } from '@/mock';
-import { CardItem } from '@/shared/ui';
+import { pigs } from '@/mock';
+import { NotificationItem } from '@/shared/ui';
+import { useFetchNotification } from '@/widgets/notification/api';
+import { SpoonIcon } from '@/asset/icons';
 
 export default function FarmContainer() {
+  const { data } = useFetchNotification();
+  const feed = data?.filter(d => d.title.includes('먹이'));
+
   return (
     <>
       <div className='p-normal-padding flex flex-col gap-6 bg-white pt-4'>
@@ -28,9 +33,10 @@ export default function FarmContainer() {
       <div className='p-normal-padding flex flex-1 flex-col gap-6 bg-transparent pt-0'>
         <span className='text-xl font-bold'>우리 농장 배급 기록</span>
         <div className='flex flex-col gap-3'>
-          {notifications.map(n => (
-            <NotificationItem key={n.id} {...n} />
-          ))}
+          {feed &&
+            feed.map(n => (
+              <NotificationItem key={n.id} {...n} icon={SpoonIcon} />
+            ))}
         </div>
       </div>
     </>
@@ -69,34 +75,5 @@ const PigItem = ({ pig }: { pig: Pig }) => {
         </td>
       ))}
     </tr>
-  );
-};
-
-const NotificationItem = ({
-  title,
-  description,
-  date,
-  checking,
-}: Notification) => {
-  return (
-    <CardItem
-      className={cn(checking ? 'text-light' : 'text-dark')}
-      shadow={!checking}
-    >
-      <div className='flex size-full items-center justify-between'>
-        <div className='flex size-full items-center gap-4'>
-          <div className='rounded-small h-full w-20 flex-shrink-0 bg-red-200' />
-          <div className='flex flex-col'>
-            <div className='flex w-full justify-between'>
-              <span className='font-semibold'>{title}</span>
-              <span className='text-sm'>
-                {getDate(date, 'YYYY년 MM월 DD일')}
-              </span>
-            </div>
-            <p>{description}</p>
-          </div>
-        </div>
-      </div>
-    </CardItem>
   );
 };
