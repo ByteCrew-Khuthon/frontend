@@ -4,12 +4,14 @@ import { stackflow } from '@stackflow/react';
 
 import { FarmScreen } from '@/screen/farm/ui';
 import { HomeScreen } from '@/screen/home/ui';
+import { CoughScreen } from '@/screen/cough/ui';
 
 export const { Stack, useFlow } = stackflow({
   transitionDuration: 350,
   activities: {
     HomeScreen,
     FarmScreen,
+    CoughScreen,
   },
   plugins: [
     basicRendererPlugin(),

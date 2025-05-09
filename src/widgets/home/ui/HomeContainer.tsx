@@ -52,7 +52,11 @@ export default function HomeContainer() {
                 </p>
               </div>
             </div>
-            <button className='rounded-small bg-point flex h-fit w-fit items-center justify-center px-4 py-2 text-nowrap text-white'>
+            <button
+              name='recentCough'
+              className='rounded-small bg-point flex h-fit w-fit items-center justify-center px-4 py-2 text-nowrap text-white'
+              onClick={() => push(PATH.COUGH, {})}
+            >
               자세히 보기
             </button>
           </div>
