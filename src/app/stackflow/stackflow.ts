@@ -6,6 +6,7 @@ import { FarmScreen } from '@/screen/farm/ui';
 import { HomeScreen } from '@/screen/home/ui';
 import { CoughScreen } from '@/screen/cough/ui';
 import { MapScreen } from '@/screen/map/ui';
+import { NotificationScreen } from '@/screen/notification/ui';
 
 export const { Stack, useFlow } = stackflow({
   transitionDuration: 350,
@@ -14,6 +15,7 @@ export const { Stack, useFlow } = stackflow({
     FarmScreen,
     CoughScreen,
     MapScreen,
+    NotificationScreen,
   },
   plugins: [
     basicRendererPlugin(),

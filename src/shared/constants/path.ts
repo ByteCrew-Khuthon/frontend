@@ -3,5 +3,5 @@ export const PATH = {
   FARM: 'FarmScreen',
   COUGH: 'CoughScreen',
   MAP: 'MapScreen',
-  NOTICE: 'NoticeScreen',
+  NOTICE: 'NotificationScreen',
 } as const;
