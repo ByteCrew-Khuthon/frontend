@@ -7,8 +7,8 @@ import { NotificaionContainer } from '@/widgets/notification/ui';
 export default function NotificationScreen() {
   return (
     <div className='fixed inset-0 overflow-hidden'>
-      <AppScreen appBar={TitleAppBar('알림')}>
-        <div className='scrollbar-hide container-mobile gap-y-normal-padding flex size-fit h-screen flex-col overflow-scroll overflow-y-scroll'>
+      <AppScreen appBar={TitleAppBar('알림')} backgroundColor='#fff'>
+        <div className='scrollbar-hide container-mobile gap-y-normal-padding flex h-full flex-col overflow-y-scroll'>
           <NotificaionContainer />
         </div>
       </AppScreen>
