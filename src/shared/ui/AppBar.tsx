@@ -11,6 +11,6 @@ export const AppBar = () => ({
 
 export const TitleAppBar = (title?: string) => ({
   ...baseStyle,
-  backgroundColor: '#F4f4f4',
+  backgroundColor: '#fff',
   title: title,
 });
